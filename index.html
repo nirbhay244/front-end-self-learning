@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="number" id="" name="num1">
+        <select name="operator" id="">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option  value="/">/</option>
+            <option value="*">*</option>
+            <option value="">%</option>
+        </select>
+        <input type="number" id="" name="num2">
+        <input type="button" value="=" onclick="submission()">
+    </form>
+    <span id="result"></span>
+    <script>
+        let n1 = document.querySelector("input[name=\"num1\"]");
+        n1.value = parseInt(n1.value);
+        let n2 = document.querySelector("input[name=\"num2\"]");
+        // n2.value = parseInt(n2.value);
+        let operator = document.querySelector("select[name=\"operator\"]");
+        function submission(){
+            let result =  document.querySelector("#result")
+            // result.append(parseInt(n1.value)+parseInt(n2.value));
+            // console.log(parseInt("n1 is "+n1.value))
+            console.log(parseInt(n1.value) + parseInt(n2.value))
+            console.log(typeof n1);
+            result.innerHTML = ""
+            switch(operator.value){
+                case '+':
+                    result.append(parseInt(n1.value) + parseInt(n2.value));
+                    break;
+                case '-':
+                result.append(parseInt(n1.value) - parseInt(n2.value));
+                    break;
+                case '*':
+                result.append(parseInt(n1.value) * parseInt(n2.value));
+                    break;
+                case '/':
+                result.append(parseInt(n1.value) / parseInt(n2.value));
+                    break;
+                default:
+                result.append(parseInt(n1.value) % parseInt(n2.value));
+            }
+
+        }
+    </script>
+</body>
+</html>
